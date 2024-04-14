@@ -1,8 +1,8 @@
 class CacheController {
   async powerCache(ctx, next) {
     const res = ctx.fileData
-    ctx.set('content-type', 'text/plain')
-    ctx.set('Cache-Control', 'max-age=10') //设置强缓存，过期时间为100秒
+    ctx.set('content-type', 'text/html; charset=utf-8')
+    ctx.set('Cache-Control', 'max-age=3') //设置强缓存，过期时间为100秒
     ctx.body = res
     console.log('越过了强缓存')
   }
@@ -15,6 +15,7 @@ class CacheController {
       ctx.status = 304
       return
     }
+    ctx.set('content-type', 'text/html; charset=utf-8')
     ctx.set('Last-Modified', status.mtime.toGMTString())
     ctx.body = res
     console.log('越过了协商缓存')

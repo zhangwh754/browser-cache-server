@@ -1,3 +1,12 @@
 hello world
 
 good morning
+
+<hr/>
+
+<a href="http://localhost:8000/cache/power">强缓存：</a>
+
+<hr/>
+
+<a href="http://localhost:8000/cache/chat">协商缓存：</a>
+
